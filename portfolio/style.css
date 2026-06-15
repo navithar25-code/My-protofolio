@@ -1,0 +1,212 @@
+/* Custom Glow Colors & Reset */
+:root {
+    --bg-color: #0b0f19;
+    --card-bg: #151c2e;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --html-glow: #ff4500;
+    --css-glow: #00bfff;
+    --js-glow: #ffd700;
+    --accent-purple: #a855f7;
+    --accent-green: #22c55e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+header .logo {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #00bfff, var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header .logo span {
+    color: var(--accent-purple);
+    -webkit-text-fill-color: var(--accent-purple);
+}
+
+header .subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #f1f5f9;
+}
+
+.card h2 i {
+    color: #00bfff;
+}
+
+.about-section p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-tag.html { border-color: var(--html-glow); color: var(--html-glow); }
+.skill-tag.css { border-color: var(--css-glow); color: var(--css-glow); }
+.skill-tag.js { border-color: var(--js-glow); color: var(--js-glow); }
+.skill-tag.c-lang { border-color: #5c6bc0; color: #9fa8da; }
+.skill-tag.python { border-color: #3776ab; color: #4b8bbe; }
+.skill-tag.node { border-color: var(--accent-green); color: var(--accent-green); }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+    .projects-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-purple);
+}
+
+.project-card h3 {
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-stack span {
+    background: rgba(168, 85, 247, 0.1);
+    color: var(--accent-purple);
+    font-size: 0.8rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Contact Section Styling */
+.contact-text {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 500px) {
+    .contact-grid {
+        flex-direction: row;
+    }
+}
+
+.contact-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-item.email:hover {
+    border-color: #00bfff;
+    color: #00bfff;
+}
+
+.contact-item.linkedin:hover {
+    border-color: #0a66c2;
+    color: #0a66c2;
+}
